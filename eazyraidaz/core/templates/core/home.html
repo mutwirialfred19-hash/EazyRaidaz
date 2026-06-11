@@ -1,0 +1,124 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}EazyRaidaz — Fast. Reliable. Simple.{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<div style="background:var(--blue-dark); background-image:radial-gradient(ellipse at 70% 50%, rgba(200,121,65,0.12) 0%, transparent 60%);">
+  <div class="hero">
+    <div class="hero-content">
+      <span class="hero-badge">🏍️ Nairobi's Fastest Riders</span>
+      <h1>Deliver <span>Faster.</span> Earn <span>More.</span></h1>
+      <p class="hero-sub">EazyRaidaz connects businesses and customers with reliable motorcycle couriers across Nairobi. Join 200+ riders already earning big.</p>
+      <div class="hero-actions">
+        <a href="{% url 'join' %}" class="btn-primary">Join the Squad →</a>
+        <a href="{% url 'services' %}" class="btn-outline">Our Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">500</div>
+          <div class="stat-label">KSh / Hour</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">200+</div>
+          <div class="stat-label">Active Riders</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">24h</div>
+          <div class="stat-label">Weekly Pay</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-logo-wrap">
+        <img src="{% static 'logo.jpeg' %}" alt="EazyRaidaz Logo">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAY RATE BAND -->
+<div class="pay-band">
+  <div class="pay-band-inner">
+    <p class="pay-label">Earn Big. Ride Easy.</p>
+    <div class="pay-amount">KSh 500 / hr</div>
+    <p class="pay-note">Consistent orders · Guaranteed pay · Weekly payouts directly to M-Pesa</p>
+  </div>
+</div>
+
+<!-- SERVICES SECTION -->
+<section class="section">
+  <div class="section-inner">
+    <span class="section-tag">What We Deliver</span>
+    <h2 class="section-title">Every Package, <span>On Time</span></h2>
+    <p class="section-sub">From hot meals to urgent pharmacy runs — our riders handle it all across Nairobi.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🍕</div>
+        <h3>Hot Meals</h3>
+        <p>Restaurant and home-cook deliveries from local spots, delivered hot and fast.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛒</div>
+        <h3>Groceries</h3>
+        <p>Supermarket and fresh-market grocery runs plus household essentials.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📦</div>
+        <h3>E-Commerce</h3>
+        <p>Packages and documents from online stores and offices across the city.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💊</div>
+        <h3>Pharmacy</h3>
+        <p>Urgent medication and medical supply deliveries to your door.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY RIDE -->
+<section class="section why-section">
+  <div class="section-inner">
+    <span class="section-tag" style="color:var(--copper-light);">Why Ride With Us</span>
+    <h2 class="section-title" style="color:var(--white);">Built for <span>Real Riders</span></h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.6);">We built EazyRaidaz the way we wished delivery platforms were built — fair pay, real support, your schedule.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="icon">⏰</div>
+        <h3>Flexible Hours</h3>
+        <p>Be your own boss. Ride when you want, take breaks when you need — no penalties for time off.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon">🛟</div>
+        <h3>Instant Support</h3>
+        <p>Our rider support team is always on call. Any issue — accident, customer complaint, navigation — we've got you.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon">📈</div>
+        <h3>Growth Bonuses</h3>
+        <p>Top riders earn extra monthly bonuses and get priority access to high-value routes and corporate accounts.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon">📲</div>
+        <h3>Simple App</h3>
+        <p>Accept, navigate, and complete deliveries from one clean app. No complicated screens or confusing dashboards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="text-align:center; background: linear-gradient(135deg, var(--off-white), white);">
+  <div class="section-inner">
+    <span class="section-tag">Ready to Start?</span>
+    <h2 class="section-title">Join the <span>EazyRaidaz Squad</span> Today</h2>
+    <p class="section-sub" style="margin:0 auto 2rem;">Registration is quick. KSh 100 service fee. Start earning within 24 hours.</p>
+    <a href="{% url 'join' %}" class="btn-primary" style="font-size:1.1rem; padding:1rem 2.5rem;">Apply Now — It's Fast →</a>
+    <p style="margin-top:1rem; color:var(--gray); font-size:0.85rem;">Requires: Motorbike license · Smartphone · Own motorbike</p>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Join the EazyRaidaz Squad{% endblock %}
+
+{% block content %}
+
+<div class="page-hero">
+  <h1>Join the <span>EazyRaidaz</span> Squad</h1>
+  <p>Turn your ride into a money machine. Fill in the form and we'll be in touch within 24 hours.</p>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+
+    <!-- Requirements -->
+    <div style="max-width:680px; margin:0 auto 2.5rem;">
+      <span class="section-tag">Requirements</span>
+      <h2 class="section-title" style="margin-bottom:1.5rem;">What You Need to <span>Get Started</span></h2>
+      <ul class="req-list">
+        <li><span class="check">✓</span> Valid Motorbike License</li>
+        <li><span class="check">✓</span> Smartphone with GPS</li>
+        <li><span class="check">✓</span> Reliable Motorbike + delivery box</li>
+        <li><span class="check">✓</span> Great Attitude!</li>
+      </ul>
+    </div>
+
+    <!-- Fee note -->
+    <div style="max-width:680px; margin:0 auto 2.5rem; background:rgba(200,121,65,0.08); border:1px solid var(--copper); border-radius:10px; padding:1.25rem 1.5rem; display:flex; gap:1rem; align-items:flex-start;">
+      <span style="font-size:1.5rem;">💳</span>
+      <div>
+        <strong style="color:var(--blue-dark);">KSh 100 Registration & Service Fee</strong>
+        <p style="color:var(--gray); font-size:0.88rem; margin-top:0.25rem;">After submitting this form, you'll receive payment details. Once paid, we'll send your onboarding form and get you set to work.</p>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div class="form-wrap">
+      <h3 style="font-family:'Barlow Condensed',sans-serif; font-size:1.6rem; font-weight:700; color:var(--blue-dark); margin-bottom:1.75rem;">Your Application</h3>
+      <form method="post" novalidate>
+        {% csrf_token %}
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="{{ form.full_name.id_for_label }}">Full Name *</label>
+            {{ form.full_name }}
+            {% if form.full_name.errors %}<span style="color:#C00;font-size:0.8rem;">{{ form.full_name.errors.0 }}</span>{% endif %}
+          </div>
+          <div class="form-group">
+            <label for="{{ form.phone.id_for_label }}">Phone Number *</label>
+            {{ form.phone }}
+            {% if form.phone.errors %}<span style="color:#C00;font-size:0.8rem;">{{ form.phone.errors.0 }}</span>{% endif %}
+          </div>
+          <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">Email Address *</label>
+            {{ form.email }}
+            {% if form.email.errors %}<span style="color:#C00;font-size:0.8rem;">{{ form.email.errors.0 }}</span>{% endif %}
+          </div>
+          <div class="form-group">
+            <label for="{{ form.location.id_for_label }}">Your Location / Area *</label>
+            {{ form.location }}
+            {% if form.location.errors %}<span style="color:#C00;font-size:0.8rem;">{{ form.location.errors.0 }}</span>{% endif %}
+          </div>
+          <div class="form-group full">
+            <label>Confirm Your Requirements</label>
+            <div class="checkbox-group">
+              <label class="checkbox-item">
+                {{ form.has_license }} {{ form.has_license.label }}
+              </label>
+              <label class="checkbox-item">
+                {{ form.has_smartphone }} {{ form.has_smartphone.label }}
+              </label>
+              <label class="checkbox-item">
+                {{ form.has_motorbike }} {{ form.has_motorbike.label }}
+              </label>
+            </div>
+          </div>
+          <div class="form-group full">
+            <label for="{{ form.message.id_for_label }}">Tell Us About Yourself (optional)</label>
+            {{ form.message }}
+          </div>
+        </div>
+        <button type="submit" class="form-btn">Submit My Application →</button>
+        <p class="form-note">By submitting, you agree our team may contact you via phone or WhatsApp.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

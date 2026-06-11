@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Services — EazyRaidaz{% endblock %}
+{% block content %}
+
+<div class="page-hero">
+  <h1>What We <span>Deliver</span></h1>
+  <p>Fast, reliable motorcycle deliveries across Nairobi for businesses and individuals.</p>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="services-grid" style="margin-top:0;">
+      {% for service in services_list %}
+      <div class="service-card">
+        <div class="service-icon">{{ service.icon }}</div>
+        <h3>{{ service.name }}</h3>
+        <p>{{ service.desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div style="text-align:center; margin-top:4rem; padding:3rem; background:var(--blue-dark); border-radius:16px; background-image:radial-gradient(ellipse at 70% 50%, rgba(200,121,65,0.1), transparent);">
+      <h2 style="font-family:'Barlow Condensed',sans-serif; font-size:2.5rem; font-weight:900; color:var(--white); margin-bottom:1rem;">Need a Custom Delivery Solution?</h2>
+      <p style="color:rgba(255,255,255,0.6); margin-bottom:2rem;">We work with restaurants, pharmacies, e-commerce stores, and businesses of all sizes.</p>
+      <a href="{% url 'contact' %}" class="btn-primary">Get in Touch →</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
